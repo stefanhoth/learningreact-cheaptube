@@ -1,21 +1,15 @@
-const VideoListItem = ({ video, id, onSelected }) => {
+const VideoListItem = ({ video, onSelected }) => {
+  const snippet = video.snippet;
+
   return (
-    <div className="video-list-item item" onClick={(event) => onSelected(id)}>
+    <div className="video-list-item item" onClick={() => onSelected(video)}>
       <div className="ui image small">
-        <img src={video.thumbnails.medium.url} alt={video.title} />
+        <img src={snippet.thumbnails.medium.url} alt={snippet.title} />
       </div>
       <div className="middle aligned content">
-        <a
-          className="header"
-          href="#video"
-          onClick={(e) => {
-            e.preventDefault();
-          }}
-        >
-          {video.title}
-        </a>
+        <div className="header">{snippet.title}</div>
         <div className="meta">
-          <span>{video.channelTitle}</span>
+          <span>{snippet.channelTitle}</span>
         </div>
       </div>
     </div>

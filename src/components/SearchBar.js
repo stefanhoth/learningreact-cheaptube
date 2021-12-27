@@ -11,7 +11,7 @@ export default class SearchBar extends Component {
 
   render() {
     return (
-      <div className="search-bar ui segment">
+      <div className="search-bar ui red segment">
         <form className="ui form" onSubmit={this.onSubmitForm}>
           <div className="field">
             <label>Search</label>

@@ -8,7 +8,7 @@ const VideoList = ({ videos }) => {
           return <VideoListItem video={video.snippet} id={video.id.videoId} />;
         });
 
-  return <div className="video-list ui divided items">{list}</div>;
+  return <div className="video-list ui divided link items">{list}</div>;
 };
 
 export default VideoList;

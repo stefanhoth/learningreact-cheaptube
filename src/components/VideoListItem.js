@@ -8,7 +8,7 @@ const VideoListItem = ({ video, id }) => {
         <a className="header" href="#video">
           {video.title}
         </a>
-        <div class="meta">
+        <div className="meta">
           <span>{video.channelTitle}</span>
         </div>
       </div>

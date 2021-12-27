@@ -26,6 +26,7 @@ export default class App extends Component {
         <div className="ui container">
           <SearchBar onSubmit={this.onSearchTerm} />
         </div>
+        <div class="ui hidden divider"></div>
         <div className="main-window ui relaxed grid container">
           <div className="column-left ten wide column">
             <VideoDetail />

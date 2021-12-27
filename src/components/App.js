@@ -1,11 +1,21 @@
 import React, { Component } from "react";
+import youtubeApi from "../api/youtubeApi";
 import SearchBar from "./SearchBar";
 import VideoDetail from "./VideoDetail";
 import VideoList from "./VideoList";
 
 export default class App extends Component {
-  onSearchTerm = (term) => {
-    console.log("User search for", term);
+  onSearchTerm = async (term) => {
+    console.log("User searched for", term);
+
+    const videos = await youtubeApi.get("/search", {
+      params: {
+        part: "snippet",
+        q: term,
+      },
+    });
+
+    console.log(videos);
   };
 
   render() {

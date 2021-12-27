@@ -8,8 +8,6 @@ export default class App extends Component {
   state = { videos: [], selectedVideo: null };
 
   onSearchTerm = async (term) => {
-    console.log("User searched for", term);
-
     const response = await youtubeApi.get("/search", {
       params: {
         part: "snippet",
@@ -21,7 +19,6 @@ export default class App extends Component {
   };
 
   onVideoSelected = (video) => {
-    console.log("User wants to play video", video.id.videoId);
     this.setState({ selectedVideo: video });
   };
 

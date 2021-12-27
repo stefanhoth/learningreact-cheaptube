@@ -17,6 +17,7 @@ export default class SearchBar extends Component {
             <label>Search</label>
             <input
               type="text"
+              name="term"
               value={this.state.term}
               onChange={(event) => {
                 this.setState({ term: event.target.value });

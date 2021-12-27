@@ -15,7 +15,10 @@ export default class App extends Component {
       },
     });
 
-    this.setState({ videos: response.data.items });
+    this.setState({
+      videos: response.data.items,
+      selectedVideo: response.data.items[0],
+    });
   };
 
   onVideoSelected = (video) => {
@@ -27,7 +30,7 @@ export default class App extends Component {
       <div className="youtube-app">
         <div className="ui container">
           <h1 className="ui center aligned header">CheapTube</h1>
-          <SearchBar onSubmit={this.onSearchTerm} />
+          <SearchBar onSubmit={this.onSearchTerm} defaultSearchTerm='Dresden' />
         </div>
         <div className="ui hidden divider"></div>
         <div className="main-window ui relaxed grid container">

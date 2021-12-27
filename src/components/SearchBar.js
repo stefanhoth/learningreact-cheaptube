@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 
 export default class SearchBar extends Component {
-  state = { term: "" };
+  state = { term: this.props.defaultSearchTerm };
+
+  componentDidMount() {
+    this.props.onSubmit(this.state.term);
+  }
 
   onSubmitForm = (event) => {
     event.preventDefault();
@@ -19,8 +23,11 @@ export default class SearchBar extends Component {
               type="text"
               name="term"
               value={this.state.term}
-              onChange={(event) => {
-                this.setState({ term: event.target.value });
+              onChange={(e) => {
+                this.setState({ term: e.target.value });
+              }}
+              onClick={(e) => {
+                e.target.value = "";
               }}
             />
           </div>

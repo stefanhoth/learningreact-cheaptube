@@ -20,6 +20,10 @@ export default class App extends Component {
     this.setState({ videos: response.data.items });
   };
 
+  onVideoSelected = (videoId) => {
+    console.log("User wants to play video", videoId);
+  };
+
   render() {
     return (
       <div className="youtube-app">
@@ -32,7 +36,10 @@ export default class App extends Component {
             <VideoDetail />
           </div>
           <div className="column right six wide column">
-            <VideoList videos={this.state.videos} />
+            <VideoList
+              videos={this.state.videos}
+              onVideoSelected={this.onVideoSelected}
+            />
           </div>
         </div>
       </div>

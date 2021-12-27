@@ -1,8 +1,18 @@
 const VideoListItem = ({ video, id }) => {
   return (
-    <li className="video-list-item" key={id}>
-      <img src={video.thumbnails.medium.url} alt={video.title} />
-    </li>
+    <div className="video-list-item item" key={id}>
+      <div className="ui image small">
+        <img src={video.thumbnails.medium.url} alt={video.title} />
+      </div>
+      <div className="middle aligned content">
+        <a className="header" href="#video">
+          {video.title}
+        </a>
+        <div class="meta">
+          <span>{video.channelTitle}</span>
+        </div>
+      </div>
+    </div>
   );
 };
 

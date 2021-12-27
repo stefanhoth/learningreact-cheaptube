@@ -27,10 +27,10 @@ export default class App extends Component {
           <SearchBar onSubmit={this.onSearchTerm} />
         </div>
         <div className="main-window ui relaxed grid container">
-          <div className="column-left twelve wide column">
+          <div className="column-left ten wide column">
             <VideoDetail />
           </div>
-          <div className="column right four wide column">
+          <div className="column right six wide column">
             <VideoList videos={this.state.videos} />
           </div>
         </div>
